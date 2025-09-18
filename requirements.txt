@@ -1,0 +1,6 @@
+pypdf>=4.2.0
+transformers>=4.39.3
+torch>=2.2.0
+sentencepiece>=0.1.99
+sacremoses>=0.0.53
+reportlab>=4.0.8
