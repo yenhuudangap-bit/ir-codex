@@ -1,0 +1,19 @@
+tasks:
+  extract:
+    description: Extrai capítulos numerados e normaliza o texto em inglês.
+    command: python run_pipeline.py extract
+  translate:
+    description: Traduz os capítulos limpos para português.
+    command: python run_pipeline.py translate
+    depends_on:
+      - extract
+  keywords:
+    description: Gera palavras-chave bilíngues e atualiza os ficheiros traduzidos.
+    command: python run_pipeline.py keywords
+    depends_on:
+      - translate
+  pdf:
+    description: Produz PDFs individuais e um PDF compilado com índice.
+    command: python run_pipeline.py pdf
+    depends_on:
+      - keywords
